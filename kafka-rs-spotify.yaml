@@ -1,0 +1,43 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: kafka-controller-spotify
+spec:
+  replicas: 1
+  selector:
+    app: kafka-spotify
+  template:
+    metadata:
+      labels:
+        app: kafka-spotify
+    spec:
+      containers:
+      - name: kafka
+        image: index.caicloud.io/caicloud/kafka:spotify
+        ports:
+        - containerPort: 9092
+        - containerPort: 2181
+        env:
+        - name: KAFKA_ADVERTISED_PORT
+          value: "9092"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-service-spotify
+  labels:
+    app: kafka-spotify
+spec:
+  ports:
+  - port: 9092
+    name: kafka-port
+    targetPort: 9092
+    protocol: TCP
+  - port: 2181
+    name: zk-port
+    targetPort: 2181
+    protocol: TCP
+  selector:
+    app: kafka-spotify
+  type: LoadBalancer
