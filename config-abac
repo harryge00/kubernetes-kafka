@@ -1,0 +1,24 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: 
+    server: https://holly-raver-3326-cluster.caicloudapp.com
+  name: anchnet_d6860ebb-b2f5-4eca-8ac6-3acd1cc17356_3016b638-9a84-4cf5-87dc-8ee1af9331b9
+contexts:
+- context:
+    cluster: anchnet_d6860ebb-b2f5-4eca-8ac6-3acd1cc17356_3016b638-9a84-4cf5-87dc-8ee1af9331b9
+    user: anchnet_d6860ebb-b2f5-4eca-8ac6-3acd1cc17356_3016b638-9a84-4cf5-87dc-8ee1af9331b9
+  name: anchnet_d6860ebb-b2f5-4eca-8ac6-3acd1cc17356_3016b638-9a84-4cf5-87dc-8ee1af9331b9
+current-context: anchnet_d6860ebb-b2f5-4eca-8ac6-3acd1cc17356_3016b638-9a84-4cf5-87dc-8ee1af9331b9
+kind: Config
+preferences: {}
+users:
+- name: anchnet_d6860ebb-b2f5-4eca-8ac6-3acd1cc17356_3016b638-9a84-4cf5-87dc-8ee1af9331b9
+  user:
+    client-certificate-data: 
+    client-key-data: 
+    token: 
+- name: anchnet_d6860ebb-b2f5-4eca-8ac6-3acd1cc17356_3016b638-9a84-4cf5-87dc-8ee1af9331b9-basic-auth
+  user:
+    password: 
+    username: 
